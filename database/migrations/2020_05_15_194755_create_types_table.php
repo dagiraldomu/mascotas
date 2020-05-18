@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePetsTable extends Migration
+class CreateTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreatePetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pets', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('types', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
-            $table->integer('type_id');
-            $table->string('feed')->nullable();
-            $table->integer('objective_id');
-            $table->mediumText('description');
-            $table->date('date');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreatePetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pets');
+        Schema::dropIfExists('types');
     }
 }
