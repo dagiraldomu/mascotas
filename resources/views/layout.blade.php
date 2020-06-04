@@ -13,6 +13,8 @@
 
             <nav class="main-nav">
                 <ul class="main-nav-list">
+                    @hasrole('admin')
+
                     <li class="main-nav-item {{ url()->current() == url('/pets') ? 'active' : ''}} ">
                         <a href="{{ url('/pets') }}" class="main-nav-link">
                             <i class="icon icon-th-list"></i>
@@ -25,6 +27,8 @@
                             <span>Nueva Mascota</span>
                         </a>
                     </li>
+
+                    @endhasrole
                     <li class="main-nav-item ">
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="main-nav-link" href="{{ route('logout') }}"

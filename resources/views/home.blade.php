@@ -13,7 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     <a href="{{ url('/pets') }}">Entrar al sistema de mascotas</a>
                 </div>
             </div>

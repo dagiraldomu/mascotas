@@ -23,16 +23,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/pets','PetController@index')->name('pets.index');
 
-Route::post('/pets','PetController@store')->name('pets.store');
-
 Route::get('/pets/create ','PetController@create')->name('pets.create');
 
-Route::get('/pets/{pet}','PetController@show')->name('pets.show');
+Route::middleware('checkRole:admin')->post('/pets','PetController@store')->name('pets.store');
 
-Route::patch('/pets/{pet}','PetController@update')->name('pets.update');
+Route::middleware('checkRole:admin')->patch('/pets/{pet}','PetController@update')->name('pets.update');
 
-Route::delete('/pets/{pet}','PetController@destroy')->name('pets.destroy');
+Route::middleware('checkRole:admin')->delete('/pets/{pet}','PetController@destroy')->name('pets.destroy');
 
-Route::get('/pets/{pet}/edit','PetController@edit')->name('pets.edit');
+Route::middleware('checkRole:admin')->get('/pets/{pet}/edit','PetController@edit')->name('pets.edit');
+
+
+//Route::get('/pets/{pet}','PetController@show')->name('pets.show');
 
 //Route::resource('pets','PetController');
+

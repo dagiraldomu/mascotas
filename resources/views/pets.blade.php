@@ -37,6 +37,9 @@
                     </div>
 
                     <footer class="card-footer">
+
+                        @hasrole('admin')
+
                         <a href=" {{ url('/pets/'.$pet->id.'/edit') }}" class="action-link action-edit">
                             <i class="icon icon-pen"></i>
                         </a>
@@ -48,6 +51,9 @@
                                 <i class="icon icon-trash"></i>
                             </button>
                         </form>
+
+                        @endhasrole
+
                     </footer>
                 </div>
             @empty

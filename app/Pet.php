@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pet extends Model
 {
+    //fillable
     public function objective()
     {
         return $this->belongsTo(Objective::class);

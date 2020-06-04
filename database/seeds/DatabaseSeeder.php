@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
         $this->call(GroupPetSeeder::class);
         $this->call(FeedPetSeeder::class);
 
+        $this->call(PermissionSeeder::class);
+        $this->call(RoleSeeder::class);
+
     }
 }
